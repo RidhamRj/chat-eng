@@ -1,0 +1,23 @@
+{
+  "name": "chat-app",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "tsc -b && nodemon dist/index.js",
+    "start": ""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@types/express": "^5.0.6",
+    "@types/ws": "^8.18.1",
+    "express": "^5.2.1",
+    "jsonwebtoken": "^9.0.3",
+    "typescript": "^7.0.2",
+    "ws": "^8.21.2"
+  }
+}
