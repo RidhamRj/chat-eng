@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ffffff">
+  <title>Chat</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <section id="auth-view" class="auth-view">
+      <div class="auth-panel">
+        <div class="brand">Chat</div>
+        <h1>Talk privately</h1>
+        <p class="intro">Create two accounts and start chatting.</p>
+
+        <div class="auth-tabs" role="tablist" aria-label="Account action">
+          <button id="login-tab" class="auth-tab active" type="button">Sign in</button>
+          <button id="signup-tab" class="auth-tab" type="button">Create account</button>
+        </div>
+
+        <form id="auth-form" class="auth-form">
+          <label for="username">Username</label>
+          <input id="username" name="username" type="text" minlength="3" maxlength="20" autocomplete="username" required>
+
+          <label for="password">Password</label>
+          <input id="password" name="password" type="password" minlength="6" maxlength="72" autocomplete="current-password" required>
+
+          <button id="auth-submit" class="primary-button" type="submit">Sign in</button>
+        </form>
+
+        <p id="auth-message" class="form-message" role="status"></p>
+      </div>
+    </section>
+
+    <section id="waiting-view" class="waiting-view hidden">
+      <div class="waiting-panel">
+        <div class="brand">Chat</div>
+        <h1>Account created</h1>
+        <p>Ask the second person to create their account. This page will open the chat automatically.</p>
+        <div id="waiting-user" class="account-line"></div>
+        <button class="text-button logout-button" type="button">Sign out</button>
+      </div>
+    </section>
+
+    <section id="chat-view" class="chat-view hidden">
+      <header class="chat-header">
+        <div class="avatar" id="partner-avatar" aria-hidden="true"></div>
+        <div class="chat-person">
+          <strong id="partner-name">Chat</strong>
+          <span id="presence-text">Private conversation</span>
+        </div>
+        <button class="text-button logout-button" type="button">Sign out</button>
+      </header>
+
+      <div id="messages" class="messages" aria-live="polite"></div>
+
+      <form id="message-form" class="message-form">
+        <input id="message-input" type="text" maxlength="500" placeholder="Write a message" autocomplete="off" required>
+        <button class="send-button" type="submit" aria-label="Send message">Send</button>
+      </form>
+      <p id="chat-error" class="chat-error" role="status"></p>
+    </section>
+  </main>
+  <script src="/app.js"></script>
+</body>
+</html>
