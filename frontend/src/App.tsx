@@ -80,16 +80,18 @@ function App() {
           return
         }
       } catch {
-        setMessages(current => [
-          ...current,
-          {
-            id: crypto.randomUUID(),
-            sender: 'Room',
-            text: rawMessage,
-            sentAt: Date.now(),
-          },
-        ])
+        setError('A message was received in an unsupported format.')
       }
+
+      setMessages(current => [
+        ...current,
+        {
+          id: crypto.randomUUID(),
+          sender: 'Room',
+          text: rawMessage,
+          sentAt: Date.now(),
+        },
+      ])
     }
 
     socket.onerror = () => {
