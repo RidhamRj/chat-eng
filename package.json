@@ -6,6 +6,9 @@
   "engines": {
     "node": ">=20"
   },
+  "scripts": {
+    "build": "npm install --prefix frontend && npm run build --prefix frontend"
+  },
   "dependencies": {
     "@vercel/blob": "2.6.1"
   }
